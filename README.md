@@ -31,7 +31,7 @@ A FastAPI application that reads and processes data from Excel sheets, providing
 3. Access the API documentation at:
    http://127.0.0.1:9090/list_tables/
 
-   {
+   json = {
     "tables": [
         "INITIAL INVESTMENT",
         "Initial Investment=",
