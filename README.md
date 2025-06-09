@@ -76,6 +76,7 @@ A FastAPI application that reads and processes data from Excel sheets, providing
 }
 
 GET http://127.0.0.1:9090/get_table_details?table_name=Initial Investment
+
 Parameters:
 
 table_name: Name of the table to get details for
@@ -90,6 +91,7 @@ Response Example:
 }
 
 GET http://127.0.0.1:9090/row_sum?table_name=Initial Investment&row_name=Initial Investment
+
 Parameters:
 table_name: Name of the table containing the row
 
