@@ -28,10 +28,12 @@ A FastAPI application that reads and processes data from Excel sheets, providing
 1. Place your Excel file in the data directory (default expects capbudg.xls)
 2. Run the FastAPI application:
    uvicorn main:app --reload
-3. Access the API documentation at:
-   http://127.0.0.1:9090/list_tables/
+3. Access the API documentation at: http://127.0.0.1:9090/list_tables/
 
-   json = {
+4. ![image](https://github.com/user-attachments/assets/9b13818d-c22e-4e28-a59b-f6ccd49113ea)
+
+
+ {
     "tables": [
         "INITIAL INVESTMENT",
         "Initial Investment=",
@@ -73,3 +75,37 @@ A FastAPI application that reads and processes data from Excel sheets, providing
         "BV(ending)"
     ]
 }
+
+GET http://127.0.0.1:9090/get_table_details?table_name=Initial Investment
+Parameters:
+
+table_name: Name of the table to get details for
+
+Response Example:
+{
+    "table_name": "Initial Investment",
+    "row_names": [
+        "Initial Investment",
+        "SALVAGE VALUE"
+    ]
+}
+
+GET http://127.0.0.1:9090/row_sum?table_name=Initial Investment&row_name=Initial Investment
+Parameters:
+
+table_name: Name of the table containing the row
+
+row_name: Name of the row to sum values for
+
+Response Example:
+
+{
+    "table_name": "Initial Investment",
+    "row_name": "Initial Investment",
+    "sum": 62484.0
+}
+
+
+
+
+
